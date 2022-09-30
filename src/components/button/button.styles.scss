@@ -1,0 +1,30 @@
+.button-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 8px 16px 12px;
+  margin-top: 44px;
+  margin-left: 32px;
+
+  width: 426px;
+  height: 68px;
+
+  background: #FF9514;
+  border-radius: 40px;
+  border: none;
+
+  &:hover {
+    background: #111111;
+  }
+
+  h2 {
+    font-family: 'Nekst-Black';
+    font-style: normal;
+    font-weight: 900;
+    font-size: 30px;
+    line-height: 36px;
+
+    color: #FFFFFF;
+  }
+}
