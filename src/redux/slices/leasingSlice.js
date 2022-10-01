@@ -1,31 +1,46 @@
-import { createSlice } from '@reduxjs/toolkit'
+import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   carPrice: 1000000,
-  anInitialFee: 200000,
-  leasePeriod: 10,
+  percentage: 10,
+  anInitialFee: 0,
+  leasePeriod: 1,
   totalSum: 0,
   monthPayment: 0,
-}
+};
 
 export const leasingSlice = createSlice({
-  name: 'counter',
+  name: "counter",
   initialState,
   reducers: {
-    increment: (state) => {
-      state.value += 1
+    setCarPrice: (state, { payload }) => {
+      state.carPrice = payload;
+      state.anInitialFee = Math.ceil((state.carPrice * state.percentage) / 100);
     },
-    decrement: (state) => {
-      state.value -= 1
+    setPercentage: (state, { payload }) => {
+      state.percentage = payload;
     },
-    incrementByAmount: (state, action) => {
-      state.value += action.payload
+    setInitialFee: (state, { payload }) => {
+      state.anInitialFee = Math.ceil((state.carPrice * state.percentage) / 100);
+    },
+    setLeasePeriod: (state, { payload }) => {
+      state.leasePeriod = payload;
+    },
+    setTotalSum: (state) => {
+      state.totalSum = state.anInitialFee + state.leasePeriod * state.monthPayment;
+    },
+    setMonthPayment: (state) => {
+      state.monthPayment = Math.ceil((state.carPrice - state.anInitialFee) *
+        ((0.035 * Math.pow(1 + 0.035, state.leasePeriod)) /
+          (Math.pow(1 + 0.035, state.leasePeriod) - 1)))
+        ;
     },
   },
-})
+});
 
 export const selectLeasing = (state) => state.leasing;
 
-export const { increment, decrement, incrementByAmount } = leasingSlice.actions
+export const { setCarPrice, setPercentage, setInitialFee, setLeasePeriod, setTotalSum, setMonthPayment } =
+  leasingSlice.actions;
 
-export default leasingSlice.reducer
+export default leasingSlice.reducer;
