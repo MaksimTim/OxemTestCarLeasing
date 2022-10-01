@@ -1,4 +1,10 @@
 .percent-block-container {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 15px 17px;
+  gap: 10px;
+
   position: absolute;
   width: 69px;
   height: 54px;

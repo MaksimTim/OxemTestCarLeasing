@@ -1,0 +1,30 @@
+.initial-fee-input-container {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 15px 17px;
+  gap: 10px;
+
+  position: absolute;
+  width: 49px;
+  height: 24px;
+  right: 7px;
+  top: 51px;
+
+  background: #EBEBEC;
+  border-radius: 16px;
+  border: none;
+
+  font-family: 'Nekst-Black';
+  font-style: normal;
+  font-weight: 900;
+  font-size: 20px;
+  line-height: 120%;
+  /* identical to box height, or 24px */
+
+  text-align: right;
+
+  /* Серый */
+
+  color: #575757;
+}
