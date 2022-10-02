@@ -50,7 +50,14 @@ const FormBlock = () => {
   const [carPriceValue, setCarPriceValue] = useState(carPrice);
   const [percentageValue, setPercentageValue] = useState(percentage);
   const [leasePerValue, setLeasePerValue] = useState(leasePeriod);
+  const [buttonDisabled, setButtonDisabled] = useState(false);
 
+  //отключение кнопки во время ввода инпута
+  const inputOnFocus = () => {
+    setButtonDisabled(true);
+  };
+
+  //ф-ии контролирования инпутов
   const carPriceChange = (e) => {
     setCarPriceValue(e.target.value);
     dispatch(setCarPrice(e.target.value));
@@ -59,6 +66,7 @@ const FormBlock = () => {
     const newValue = minMaxInputChanger(carPriceValue, 1000000, 6000000);
     setCarPriceValue(newValue);
     dispatch(setCarPrice(newValue));
+    setButtonDisabled(false);
   };
 
   const percentageChange = (e) => {
@@ -71,6 +79,7 @@ const FormBlock = () => {
     setPercentageValue(newValue);
     dispatch(setPercentage(newValue));
     dispatch(setInitialFee());
+    setButtonDisabled(false);
   };
 
   const leasePeriodChange = (e) => {
@@ -81,6 +90,7 @@ const FormBlock = () => {
     const newValue = minMaxInputChanger(leasePerValue, 1, 60);
     setLeasePerValue(newValue);
     dispatch(setLeasePeriod(newValue));
+    setButtonDisabled(false);
   };
 
   //обновление полей после расчета
@@ -101,7 +111,6 @@ const FormBlock = () => {
       totalSum,
       monthPayment,
     };
-
     await postFromForm(formPost);
   };
 
@@ -114,6 +123,7 @@ const FormBlock = () => {
           onBlur={carPriceOnBlur}
           value={carPriceValue}
           onChange={carPriceChange}
+          onFocus={inputOnFocus}
           name="carPrice"
           min="1000000"
           max="6000000"
@@ -138,6 +148,7 @@ const FormBlock = () => {
           value={percentageValue}
           onBlur={percentageOnBlur}
           onChange={percentageChange}
+          onFocus={inputOnFocus}
           name="percentage"
           min="10"
           max="60"
@@ -159,6 +170,7 @@ const FormBlock = () => {
           value={leasePerValue}
           onBlur={leasePeriodOnBlur}
           onChange={leasePeriodChange}
+          onFocus={inputOnFocus}
           name="leasePeriod"
           min="1"
           max="60"
@@ -175,13 +187,13 @@ const FormBlock = () => {
       </LeasePeriod>
       <Total>
         <InputTitle>Сумма договора лизинга</InputTitle>
-        <TotalValue>{totalSum} ₽</TotalValue>
+        <TotalValue>{totalSum ? totalSum : "0"} ₽</TotalValue>
       </Total>
       <MonthPay>
         <InputTitle>Ежемесячный платеж от</InputTitle>
-        <MonthPayValue>{monthPayment} ₽</MonthPayValue>
+        <MonthPayValue>{monthPayment ? monthPayment : "0"} ₽</MonthPayValue>
       </MonthPay>
-      <Button disabled={isLoading ? "disabled" : ""} />
+      <Button disabled={isLoading ? "disabled" : "" || buttonDisabled} />
     </form>
   );
 };
