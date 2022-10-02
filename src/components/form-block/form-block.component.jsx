@@ -109,7 +109,6 @@ const FormBlock = () => {
     <form onSubmit={handleSubmit}>
       <CarPrice>
         <InputTitle>Стоимость автомобиля</InputTitle>
-
         <InputCarPrice
           disabled={isLoading ? "disabled" : ""}
           onBlur={carPriceOnBlur}

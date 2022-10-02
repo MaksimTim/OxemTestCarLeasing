@@ -7,5 +7,6 @@ export const store = configureStore({
     leasing: leasingReducer,
     [leasingApi.reducerPath]: leasingApi.reducer,
   },
-  middleware: getDefaultMiddleware => getDefaultMiddleware().concat(leasingApi.middleware)
+  middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware().concat(leasingApi.middleware),
 });

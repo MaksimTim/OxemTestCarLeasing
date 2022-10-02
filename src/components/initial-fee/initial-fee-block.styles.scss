@@ -6,9 +6,13 @@
   bottom: 5.88%;
 
   /* Серый */
-
   background: #F3F3F4;
   border-radius: 16px;
+
+  &:disabled {
+    background: #f6f6f6;
+    color: #bdbdbd;
+  }
 }
 
 .initial-fee-block-text {
@@ -19,7 +23,6 @@
   top: -10px;
 
   /* H2 30 */
-
   font-family: 'Nekst-Black';
   font-style: normal;
   font-weight: 900;

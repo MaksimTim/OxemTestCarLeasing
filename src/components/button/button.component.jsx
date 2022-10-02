@@ -1,12 +1,10 @@
-import React from 'react';
-import './button.styles.scss'
+import React from "react";
+import "./button.styles.scss";
 
-const Button = ({...props}) => {
+const Button = ({ ...props }) => {
   return (
-    <button className='button-container' {...props}>
-      <h2>
-        Оставить заявку
-      </h2>
+    <button className="button-container" {...props}>
+      <h2>Оставить заявку</h2>
     </button>
   );
 };

@@ -5,6 +5,19 @@
 
   background: #FFFFFF;
 
+  @media (max-width: 1024px) {
+    width: 1024px;
+    height: 1013px;
+  }
+  @media (max-width: 768px) {
+    width: 768px;
+    height: 1013px;
+  }
+  @media (max-width: 320px) {
+    width: 320px;
+    height: 803px;
+  }
+
   button {
     &:hover {
       background: #111111;
@@ -44,6 +57,14 @@
 
     &:focus {
       outline: none;
+    }
+
+    &:disabled::-webkit-slider-thumb {
+      background: #ffb967;
+    }
+
+    &:disabled::-webkit-slider-runnable-track {
+      background: #ffb967;
     }
 
     &::-ms-track {

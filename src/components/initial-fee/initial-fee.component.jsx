@@ -1,12 +1,8 @@
-import React from 'react';
-import './initial-fee.styles.scss'
+import React from "react";
+import "./initial-fee.styles.scss";
 
-const InitialFee = ({children}) => {
-  return (
-    <div className='initial-fee-container'>
-      {children}
-    </div>
-  );
+const InitialFee = ({ children }) => {
+  return <div className="initial-fee-container">{children}</div>;
 };
 
 export default InitialFee;
