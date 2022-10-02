@@ -1,4 +1,4 @@
-import "./App.css";
+import "./App.scss";
 import HeaderTitle from "./components/header-title/header-title.component";
 import FormBlock from "./components/form-block/form-block.component";
 

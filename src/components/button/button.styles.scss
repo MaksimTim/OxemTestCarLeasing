@@ -4,19 +4,18 @@
   justify-content: center;
   align-items: center;
   padding: 8px 16px 12px;
-  margin-top: 44px;
-  margin-left: 32px;
+  gap: 10px;
 
+  position: absolute;
   width: 426px;
   height: 68px;
+  left: 965px;
+  top: 516px;
 
   background: #FF9514;
   border-radius: 40px;
   border: none;
 
-  &:hover {
-    background: #111111;
-  }
 
   h2 {
     font-family: 'Nekst-Black';

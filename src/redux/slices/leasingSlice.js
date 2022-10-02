@@ -20,7 +20,7 @@ export const leasingSlice = createSlice({
     setPercentage: (state, { payload }) => {
       state.percentage = payload;
     },
-    setInitialFee: (state, { payload }) => {
+    setInitialFee: (state) => {
       state.anInitialFee = Math.ceil((state.carPrice * state.percentage) / 100);
     },
     setLeasePeriod: (state, { payload }) => {

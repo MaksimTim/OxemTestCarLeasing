@@ -1,0 +1,28 @@
+.App {
+  position: relative;
+  width: 1440px;
+  height: 800px;
+
+  background: #FFFFFF;
+
+  button {
+    &:hover {
+      background: #111111;
+    }
+
+    &:disabled {
+      background: rgba(255, 149, 20, 0.4);
+    }
+  }
+
+  input {
+    &:focus {
+      border: 2px solid #F3F3F4;
+      background: white;
+    }
+    &:disabled {
+      background: #f6f6f6;
+      color: #bdbdbd;
+    }
+  }
+}
