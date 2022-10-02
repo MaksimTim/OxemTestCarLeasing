@@ -9,4 +9,18 @@
   height: 81px;
   left: 47px;
   top: 506px;
+
+  @media (max-width: 1024px) {
+    top: 700px;
+  }
+  @media (max-width: 768px) {
+    left: 36px;
+    top: 664px;
+  }
+  @media (max-width: 320px) {
+    width: 167px;
+    height: 41px;
+    left: 20px;
+    top: 536px;
+  }
 }

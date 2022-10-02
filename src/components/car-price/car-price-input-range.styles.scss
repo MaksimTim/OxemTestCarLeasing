@@ -5,5 +5,7 @@
   right: 24px;
   top: 110px;
 
-  background: #E1E1E1;
+  @media (max-width: 320px) {
+    top: 87px;
+  }
 }

@@ -1,28 +1,27 @@
-.lease-period-input-container {
+.symbol-value-container {
   position: absolute;
-  left: 0%;
-  right: 0%;
-  top: 36.97%;
-  bottom: 5.88%;
+  height: 36px;
+  left: 383px;
+  right: 24px;
+  top: 60px;
 
-  /* Серый */
-
-  background: #F3F3F4;
-  border-radius: 16px;
-  border: none;
-
-  padding-left: 24px;
+  /* H2 30 */
   font-family: 'Nekst-Black';
   font-style: normal;
   font-weight: 900;
   font-size: 30px;
   line-height: 36px;
   /* identical to box height, or 120% */
+  text-align: right;
 
   /* Серый */
   color: #575757;
 
   @media (max-width: 320px) {
+    width: 47px;
+    left: 213px;
+    top: 48.96%;
+    bottom: 30.21%;
     font-size: 22px;
   }
 }

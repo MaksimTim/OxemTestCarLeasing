@@ -6,4 +6,23 @@
   height: 119px;
   left: 506px;
   top: 343px;
+
+  @media (max-width: 1024px) {
+    width: 928px;
+    height: 119px;
+    left: 48px;
+    top: 393px;
+  }
+  @media (max-width: 768px) {
+    width: 696px;
+    height: 119px;
+    left: 36px;
+    top: 357px;
+  }
+  @media (max-width: 320px) {
+    width: 280px;
+    height: 96px;
+    left: 20px;
+    top: 312px;
+  }
 }

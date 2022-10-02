@@ -1,9 +1,27 @@
 .car-price-container {
   /* Frame 459 */
-
   position: absolute;
   width: 427px;
   height: 119px;
   left: 47px;
   top: 343px;
+
+  @media (max-width: 1024px) {
+    width: 928px;
+    height: 119px;
+    left: 48px;
+    top: 242px;
+  }
+  @media (max-width: 768px) {
+    width: 696px;
+    height: 119px;
+    left: 36px;
+    top: 206px;
+  }
+  @media (max-width: 320px) {
+    width: 280px;
+    height: 96px;
+    left: 20px;
+    top: 200px;
+  }
 }

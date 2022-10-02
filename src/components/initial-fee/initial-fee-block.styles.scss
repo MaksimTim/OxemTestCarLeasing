@@ -15,7 +15,7 @@
   position: absolute;
   height: 36px;
   left: 24px;
-  right: 220px;
+  right: 100px;
   top: -10px;
 
   /* H2 30 */
@@ -28,4 +28,8 @@
   /* identical to box height, or 120% */
 
   color: #575757;
+
+  @media (max-width: 320px) {
+    font-size: 22px;
+  }
 }

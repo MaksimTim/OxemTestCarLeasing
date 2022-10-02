@@ -3,7 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 const initialState = {
   carPrice: 1000000,
   percentage: 10,
-  anInitialFee: 0,
+  anInitialFee: 100000,
   leasePeriod: 1,
   totalSum: 0,
   monthPayment: 0,
@@ -27,20 +27,28 @@ export const leasingSlice = createSlice({
       state.leasePeriod = payload;
     },
     setTotalSum: (state) => {
-      state.totalSum = state.anInitialFee + state.leasePeriod * state.monthPayment;
+      state.totalSum =
+        state.anInitialFee + state.leasePeriod * state.monthPayment;
     },
     setMonthPayment: (state) => {
-      state.monthPayment = Math.ceil((state.carPrice - state.anInitialFee) *
-        ((0.035 * Math.pow(1 + 0.035, state.leasePeriod)) /
-          (Math.pow(1 + 0.035, state.leasePeriod) - 1)))
-        ;
+      state.monthPayment = Math.ceil(
+        (state.carPrice - state.anInitialFee) *
+          ((0.035 * Math.pow(1 + 0.035, state.leasePeriod)) /
+            (Math.pow(1 + 0.035, state.leasePeriod) - 1))
+      );
     },
   },
 });
 
 export const selectLeasing = (state) => state.leasing;
 
-export const { setCarPrice, setPercentage, setInitialFee, setLeasePeriod, setTotalSum, setMonthPayment } =
-  leasingSlice.actions;
+export const {
+  setCarPrice,
+  setPercentage,
+  setInitialFee,
+  setLeasePeriod,
+  setTotalSum,
+  setMonthPayment,
+} = leasingSlice.actions;
 
 export default leasingSlice.reducer;

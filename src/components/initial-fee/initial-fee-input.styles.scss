@@ -21,10 +21,15 @@
   font-size: 20px;
   line-height: 120%;
   /* identical to box height, or 24px */
-
-  text-align: right;
+  text-align: left;
 
   /* Серый */
-
   color: #575757;
+
+  @media (max-width: 320px) {
+    width: 49px;
+    height: 14px;
+    right: 7px;
+    top: 41px;
+  }
 }

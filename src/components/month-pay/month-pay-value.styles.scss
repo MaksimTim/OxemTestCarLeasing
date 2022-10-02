@@ -1,5 +1,4 @@
 .month-pay-value-container {
-
   font-family: 'Nekst-Black';
   font-style: normal;
   font-weight: 900;
@@ -8,4 +7,7 @@
 
   color: #575757;
 
+  @media (max-width: 320px) {
+    font-size: 22px;
+  }
 }

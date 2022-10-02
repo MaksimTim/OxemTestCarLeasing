@@ -5,4 +5,23 @@
   height: 119px;
   left: 965px;
   top: 343px;
+
+  @media (max-width: 1024px) {
+    width: 928px;
+    height: 119px;
+    left: 48px;
+    top: 544px;
+  }
+  @media (max-width: 768px) {
+    width: 696px;
+    height: 119px;
+    left: 36px;
+    top: 508px;
+  }
+  @media (max-width: 320px) {
+    width: 280px;
+    height: 96px;
+    left: 20px;
+    top: 424px;
+  }
 }

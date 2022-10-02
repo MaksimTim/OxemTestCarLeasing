@@ -27,6 +27,7 @@ import Total from "../total/total.component";
 import TotalValue from "../total/total-value.component";
 import MonthPay from "../month-pay/month-pay.component";
 import MonthPayValue from "../month-pay/month-pay-value.component";
+import SymbolValue from "../symbol-value/symbol-value.component";
 
 import { usePostFromFormMutation } from "../../redux/api/leasingApi";
 
@@ -108,6 +109,7 @@ const FormBlock = () => {
     <form onSubmit={handleSubmit}>
       <CarPrice>
         <InputTitle>Стоимость автомобиля</InputTitle>
+
         <InputCarPrice
           disabled={isLoading ? "disabled" : ""}
           onBlur={carPriceOnBlur}
@@ -127,6 +129,7 @@ const FormBlock = () => {
           max="6000000"
           step="10"
         />
+        <SymbolValue>₽</SymbolValue>
       </CarPrice>
       <InitialFee>
         <InputTitle>Первоначальный взнос</InputTitle>
@@ -148,6 +151,7 @@ const FormBlock = () => {
           min="10"
           max="60"
         />
+        <SymbolValue>%</SymbolValue>
       </InitialFee>
       <LeasePeriod>
         <InputTitle>Срок лизинга</InputTitle>
@@ -168,6 +172,7 @@ const FormBlock = () => {
           min="1"
           max="60"
         />
+        <SymbolValue>мес.</SymbolValue>
       </LeasePeriod>
       <Total>
         <InputTitle>Сумма договора лизинга</InputTitle>
@@ -177,81 +182,9 @@ const FormBlock = () => {
         <InputTitle>Ежемесячный платеж от</InputTitle>
         <MonthPayValue>{monthPayment} ₽</MonthPayValue>
       </MonthPay>
-
       <Button disabled={isLoading ? "disabled" : ""} />
     </form>
   );
 };
 
 export default FormBlock;
-
-/*
-<form onSubmit={handleSubmit} className="form-block-container">
-  <div className="form-block-row">
-    <InputBlock>
-      <InputTitle>Стоимость автомобиля</InputTitle>
-      <FormInput
-        value={carPrice}
-        onChange={carPriceChange}
-        name="carPrice"
-        min="1000000"
-        max="6000000"
-        step="10"
-      />
-      <FormInputRange
-        value={carPrice}
-        onChange={carPriceChange}
-        name="carPrice"
-        min="1000000"
-        max="6000000"
-        step="10"
-      />
-    </InputBlock>
-    <InputBlock>
-      <InputTitle>Первоначальный взнос</InputTitle>
-      <PercentBlock>{percentage}</PercentBlock>
-      <FormInput
-        value={anInitialFee}
-        onChange={percentageChange}
-        name="anInitialFee"
-        min="10"
-        max="60"
-      />
-      <FormInputRange
-        value={percentage}
-        onChange={percentageChange}
-        name="percentage"
-        min="10"
-        max="60"
-      />
-    </InputBlock>
-    <InputBlock>
-      <InputTitle>Срок лизинга</InputTitle>
-      <FormInput
-        value={leasePeriod}
-        onChange={leasePeriodChange}
-        name="leasePeriod"
-        min="1"
-        max="60"
-      />
-      <FormInputRange
-        value={leasePeriod}
-        onChange={leasePeriodChange}
-        name="leasePeriod"
-        min="1"
-        max="60"
-      />
-    </InputBlock>
-  </div>
-  <div className="form-block-row">
-    <InputBlock>
-      <InputTitle>Сумма договора лизинга</InputTitle>
-      <CheckValue>{totalSum} p</CheckValue>
-    </InputBlock>
-    <InputBlock>
-      <InputTitle>Ежемесячный платеж от</InputTitle>
-      <CheckValue>{monthPayment} p</CheckValue>
-    </InputBlock>
-    <Button />
-  </div>
-</form>*/

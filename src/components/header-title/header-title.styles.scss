@@ -12,5 +12,22 @@
     font-weight: 900;
     font-size: 54px;
     line-height: 90%;
+
+    @media (max-width: 320px) {
+      font-size: 34px;
+    }
+  }
+
+  @media (max-width: 1024px) {
+    top: 100px;
+  }
+  @media (max-width: 768px) {
+    top: 64px;
+  }
+  @media (max-width: 320px) {
+    width: 279px;
+    height: 124px;
+    left: 21px;
+    top: 44px;
   }
 }

@@ -5,8 +5,6 @@
   top: 36.97%;
   bottom: 5.88%;
 
-  /* Серый */
-
   background: #F3F3F4;
   border-radius: 16px;
   border: none;
@@ -19,5 +17,7 @@
   line-height: 36px;
   color: #575757;
 
-
+  @media (max-width: 320px) {
+    font-size: 22px;
+  }
 }

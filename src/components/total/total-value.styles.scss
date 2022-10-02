@@ -7,4 +7,8 @@
   line-height: 10%;
 
   color: #575757;
+
+  @media (max-width: 320px) {
+    font-size: 22px;
+  }
 }
