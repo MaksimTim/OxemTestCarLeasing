@@ -52,7 +52,7 @@ const FormBlock = () => {
   const [leasePerValue, setLeasePerValue] = useState(leasePeriod);
   const [buttonDisabled, setButtonDisabled] = useState(false);
 
-  //отключение кнопки во время ввода инпута
+  //отключение кнопки во время ввода инпута (на всякий случай)
   const inputOnFocus = () => {
     setButtonDisabled(true);
   };
