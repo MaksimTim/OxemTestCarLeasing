@@ -187,11 +187,11 @@ const FormBlock = () => {
       </LeasePeriod>
       <Total>
         <InputTitle>Сумма договора лизинга</InputTitle>
-        <TotalValue>{totalSum ? totalSum : "0"} ₽</TotalValue>
+        <TotalValue>{totalSum ? (totalSum).toLocaleString('ru') : "0"} ₽</TotalValue>
       </Total>
       <MonthPay>
         <InputTitle>Ежемесячный платеж от</InputTitle>
-        <MonthPayValue>{monthPayment ? monthPayment : "0"} ₽</MonthPayValue>
+        <MonthPayValue>{monthPayment ? (monthPayment).toLocaleString('ru') : "0"} ₽</MonthPayValue>
       </MonthPay>
       <Button disabled={isLoading ? "disabled" : "" || buttonDisabled} />
     </form>
